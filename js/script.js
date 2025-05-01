@@ -1,18 +1,15 @@
 // Copyright (c) 2020 Mr. Coxall All rights reserved
 //
 // Created by: Trisha Ray
-// Created on: Feb 2025
+// Created on: May 2025
 // This file contains the JS functions for index.html
 "use strict"
 
 function calculate() {
-  const lengthAString = prompt("sideA");
-  const lengthBString = prompt("sideB");
-  const lengthCString = prompt("sideC");
 
-  const lengthA = parseFloat(lengthAString);
-  const lengthB = parseFloat(lengthBString);
-  const lengthC = parseFloat(lengthCString);
+  const lengthA = parseFloat(document.getElementById("sideA").value);
+  const lengthB = parseFloat(document.getElementById("sideB").value);
+  const lengthC = parseFloat(document.getElementById("sideC").value);
 
   // using the cosine law
   const angleA =
@@ -29,26 +26,22 @@ function calculate() {
   console.log(angleB);
   console.log(angleC);
   console.log(sumOfAngles);
-  // input
-  const sideA = parseFloat (document.getElementById("sideA").value);
-  const sideB = parseFloat (document.getElementById("sideB").value);
-  const sideC = parseFloat (document.getElementById("sideC").value);
 
   // process
   if (sumOfAngles === 180) {
-    if ((sideA === sideB && sideB === sideC)) {
+    if ((lengthA === lengthB) && (lengthB === lengthC)) {
       // output
       document.getElementById("results").innerHTML =
         "<p>This is an equilateral triangle.</p>";
     }
     // process
-    else if (sideA === sideB || sideB === sideC || sideA === sideC) {
+    else if ((lengthA === lengthB )|| (lengthB === lengthC) || (lengthA === lengthC)) {
       // output
       document.getElementById("results").innerHTML =
         "<p>This is an isoceles triangle</p>";
     }
     // process
-    else if (sideA != sideB && sideB != sideC && sideA != sideC) {
+    else if ((lengthA != lengthB) && (lengthB != lengthC) && (lengthA != lengthC)) {
       // output
       document.getElementById("results").innerHTML =
         "<p>This is an scalene triangle</p>";
